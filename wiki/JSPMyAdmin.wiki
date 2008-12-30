@@ -1,0 +1,19 @@
+#summary A MySQL Administration Tool.
+#labels Featured,Phase-Requirements,Phase-Implementation
+
+= Introduction =
+
+JSPMyAdmin to manipulate the MySQL Database in easiet and simple way with user friendly GUI.
+
+
+= Details =
+
+MySQL database Management System used to story data. It is used in many webserver as well in mnay big organisation. But MySQl doesnt have any GUI, it has to be handled throught Command Promp. Hence it is tidious for the users who either dont know how to use MQL query and who love to work on GUI interface. Hence JSPMyAdmin works as a GUI for MySQL Database, through which you can control almost every MySQl fucntionality. This will defined a new era in the way system interacts with user and the way it solves the problems.
+
+A Project can be extended to be used in Web Servers, and anywhere else where MySQL database is used. Thus, allowing JSPMyAdmin to manipulate the Database in easiet and simple way.
+
+
+Any Improvement or Suggestions are welcomed.
+
+Created By : Ankit Sharma
+             ankit_sam2001@yahoo.com

@@ -62,6 +62,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					{
 		     			session.setAttribute("user",request.getParameter("user"));
 						session.setAttribute("pass",request.getParameter("pass"));
+						session.setAttribute("server",request.getParameter("server"));
+						session.setAttribute("port",request.getParameter("port"));
 						}
 
 				%>

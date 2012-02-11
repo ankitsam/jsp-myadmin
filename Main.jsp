@@ -1,7 +1,14 @@
 <%@ page language="java"  errorPage="error.jsp" pageEncoding="ISO-8859-1"%>
 <%
-    String server=request.getParameter("server");
-     %>
+if (request.getMethod().equalsIgnoreCase("post"))
+{
+        session.setAttribute("user",request.getParameter("user"));
+        session.setAttribute("pass",request.getParameter("pass"));
+        session.setAttribute("server",request.getParameter("server"));
+        session.setAttribute("port",request.getParameter("port"));
+}
+String server=(String)session.getAttribute("server");
+%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>

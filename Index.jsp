@@ -5,12 +5,6 @@
 String t=new GregorianCalendar().getTime().toString();
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-
-  
- 
-
-        
-
 %>
 
 
@@ -57,18 +51,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					objForm.port.focus();
 					return false;
 				}
-				<%
-					if (request.getMethod().equals("post"))
-					{
-		     			session.setAttribute("user",request.getParameter("user"));
-						session.setAttribute("pass",request.getParameter("pass"));
-						session.setAttribute("server",request.getParameter("server"));
-						session.setAttribute("port",request.getParameter("port"));
-						}
-
-				%>
-				
-				return true;
+ 				return true;
 			}
           </script>
   </head>

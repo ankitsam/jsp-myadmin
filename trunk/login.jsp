@@ -1,4 +1,4 @@
-<%@ page language="java"import="java.sql.*" errorPage="error.jsp" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" import="java.sql.*" errorPage="error.jsp" pageEncoding="ISO-8859-1"%>
      <%
 			String User=session.getAttribute("user");
 			String Pass=session.getAttribute("pass");

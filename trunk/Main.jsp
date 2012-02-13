@@ -1,33 +1,38 @@
 <%@ page language="java"  errorPage="error.jsp" pageEncoding="ISO-8859-1"%>
-<%
-if (request.getMethod().equalsIgnoreCase("post"))
-{
-        session.setAttribute("user",request.getParameter("user"));
-        session.setAttribute("pass",request.getParameter("pass"));
-        session.setAttribute("server",request.getParameter("server"));
-        session.setAttribute("port",request.getParameter("port"));
-}
-String server=(String)session.getAttribute("server");
-%>
+<%@page import="java.util.*"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
-  <head>
-   <%if (server!=null){ %>
-    <title><%=server%> | JSPMyAdmin 1.0</title>
-    <%}else{ %>
-    <title>JSPMyAdmin 1.0</title>
-    <%} %>
-  </head>
+<head>
+	<%
+		String Host = null;
+		try {	
+			if(request.getMethod().equalsIgnoreCase("post")){
+				session.setAttribute("user",request.getParameter("user"));
+				session.setAttribute("pass",request.getParameter("pass"));
+				session.setAttribute("host",request.getParameter("host"));
+				session.setAttribute("port",request.getParameter("port"));
+			} // Only if user enters the credentials otherwise it is available in the session object.		
+		
+			Host = (String)session.getAttribute("host");
+			out.println("<title> "+ Host + " | JSPMyAdmin 1.1</title>");
+		} catch (Exception e){
+			out.println("<title> JSPMyAdmin 1.1</title>");			
+		}		
+	%>   
+</head>
+
+<% if(Host != null && !Host.equals("")){ %>
 
 <frameset cols="220,*" rows="0" border="0" frameborder="no"> 
   <frame src="left.jsp" name="nav">
-  <frameset cols="0" rows="*,90" border="0" frameborder="no">
-  <frame src="welcome.jsp" name="jspmain">
-  <frame src="footer.jsp" name="foo">
-  </frameset>
+  <frame src="welcome.jsp" name="jspmain">  
 </frameset>
+<body bgcolor="#f5f5f5"></body>
+<% } else { %>
 <body bgcolor="#f5f5f5">
-
+<script language="javascript">
+	parent.location.href = 'Index.jsp';
+</script>
 </body>
-  
+<% } %>
 </html>

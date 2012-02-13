@@ -57,6 +57,7 @@ if (request.getParameter("row1col1")!=null)
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
+   <script language="javascript" src="confirm.js" type="text/javascript"></script>
     <base href="<%=basePath%>">
     
     <title>Table Data</title>
@@ -82,7 +83,7 @@ if (request.getParameter("row1col1")!=null)
 		 
                  <table style="width: 1000px">
             <tr>
-            <td style="width: 5px"></td>
+            <td colspan="2" style="width: 100px;font-family: Calibri;font-weight: bold; text-align: center; background-color: #d0dce0">Action</td>
             <% 
                 for(int i=1;i<=rsmd.getColumnCount(); i++) {
                 columnnm=rsmd.getColumnName(i).toString();
@@ -100,9 +101,9 @@ if (request.getParameter("row1col1")!=null)
            	while(rst.next()) {
             %>
            <tr>
-           <td>
-           <a href="deletedata.jsp?db=<%=db%>&table=<%=table%>&field=<%=rsmd.getColumnName(1) %>&val=<%=rst.getString(1) %>" target="jspmain"><img class="icon" src="./Images/Delete.gif" alt=""/></a>
-           </td>
+           <td colspan="2">
+           <a href="javascript:dRecord('deletedata.jsp?db=<%=db%>&table=<%=table%>&field=<%=rsmd.getColumnName(1) %>&val=<%=rst.getString(1) %>')"><img class="icon" src="./Images/Delete.gif" alt="Delete Record"/></a>
+           </td>           
          <% 
                 for(int i=1;i<=rsmd.getColumnCount(); i++) {
                 record=rst.getString(i);

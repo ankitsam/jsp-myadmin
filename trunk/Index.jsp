@@ -5,15 +5,15 @@
 String t=new GregorianCalendar().getTime().toString();
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-%>
 
+%>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
     <base href="<%=basePath%>">
     
-    <title>JSPMyAdmin 1.0</title>
+    <title>JSPMyAdmin 1.1</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -40,9 +40,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					objForm.pass.focus();
 					return false;
 				}
-				if(objForm.server.value.length==0){
+				if(objForm.host.value.length==0){
 					alert("Please enter Host Name!");
-					objForm.server.focus();
+					objForm.host.focus();
 					return false;
 				}
 				
@@ -51,7 +51,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					objForm.port.focus();
 					return false;
 				}
- 				return true;
+								
+				return true;
 			}
           </script>
   </head>
@@ -65,7 +66,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </tr>
 </table>
 <center style="text-align: center;"><%=t%></center>
- <form action="Main.jsp" method="post" name="login" onSubmit="return validate(this)"> 
+ <form action="Main.jsp" method="post" name="login" onSubmit="return validate(this)" target="_top"> 
 <table align=center bgcolor="#f5f5f5" style="width: 316px; height: 100px">
             <tr>
                 <td style="width: 184px;">
@@ -83,17 +84,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             </tr>
             <tr>
                 <td style="width: 184px;">
-  Server 
+  Host 
                 </td>
                 <td style="width: 5px">
-                <input type="text" name="server" style="width: 227px"></td>
+                <input type="text" name="host" value="localhost" style="width: 227px"></td>
                
             </tr>
             <tr>
                 <td style="width: 184px; height: 3px;">
   Port</td>
                 <td style="width: 5px; height: 3px">
-                <input type="text" name="port" style="width: 226px"></td>
+                <input type="text" name="port" value="3306" style="width: 226px"></td>
                
             </tr>
             <tr>

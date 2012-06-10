@@ -100,7 +100,7 @@
                     </td>
                 <td style="width: 200px; text-align: left; background-color:#f5f5f5">
                 <%
-                pstm = con.prepareStatement("USE "+db);
+                pstm = con.prepareStatement("USE `"+db+"`");
                 pstm.execute();
                 pstm = con.prepareStatement("SELECT COUNT(*) \"count\" FROM "+localtable);
                  rst = pstm.executeQuery();
@@ -115,7 +115,7 @@
                     </td>
                      <td style="width: 200px; text-align: left; background-color:#f5f5f5">
                      	<%
-                     	pstm = con.prepareStatement("USE "+db);
+                     	pstm = con.prepareStatement("USE `"+db+"`");
                 		pstm.execute();
                 		pstm = con.prepareStatement("SHOW TABLE STATUS");
                  		rst = pstm.executeQuery();
@@ -131,7 +131,7 @@
                      <td style="width: 200px; text-align: left; background-color:#f5f5f5">
                      
                      <%
-                     	pstm = con.prepareStatement("USE "+db);
+                     	pstm = con.prepareStatement("USE `"+db+"`");
                 		pstm.execute();
                 		pstm = con.prepareStatement("SHOW TABLE STATUS");
                  		rst = pstm.executeQuery();

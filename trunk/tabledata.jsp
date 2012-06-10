@@ -66,7 +66,7 @@ if (request.getParameter("row1col1")!=null)
   <body bgcolor="#f5f5f5">
 			<%
 		 		String columnnm,record;
-		 		PreparedStatement pstm1 = con.prepareStatement("USE "+db);
+		 		PreparedStatement pstm1 = con.prepareStatement("USE `"+db+"`");
                 rst =pstm1.executeQuery();
                 if (query1=="" || query1==null)
                 {

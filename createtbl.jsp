@@ -45,7 +45,7 @@ int m;
 	else if (alter!="" && alter!=null)
 	{
 	   String columnnm;
-		PreparedStatement pstm1 = con.prepareStatement("USE "+db);
+		PreparedStatement pstm1 = con.prepareStatement("USE `"+db+"`");
         ResultSet rst =pstm1.executeQuery();
         pstm1 = con.prepareStatement("SELECT * FROM "+newtblname);
         rst= pstm1.executeQuery();

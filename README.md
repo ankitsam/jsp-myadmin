@@ -1,3 +1,6 @@
+== No longer maintained ==
+---------------------------
+
 Why JSPMyAdmin?
 ------------------
 MySQL database Management System used to story data. It is used in many web server as well in many big organization. But MySQL doesn't have any GUI, it has to be handled through Command Prompt. Hence it is tedious for the users who either don't know how to use MQL query and who love to work on GUI interface. Hence JSPMyAdmin works as a GUI for MySQL Database, through which you can control almost every MySQL functionality. This will defined a new era in the way system interacts with user and the way it solves the problems.
